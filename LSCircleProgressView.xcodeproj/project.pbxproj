@@ -10,6 +10,9 @@
 		2C12C09220A5233B00650E74 /* LSCircleProgressView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C12C08820A5233B00650E74 /* LSCircleProgressView.framework */; };
 		2C12C09720A5233B00650E74 /* LSCircleProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12C09620A5233B00650E74 /* LSCircleProgressViewTests.swift */; };
 		2C12C09920A5233B00650E74 /* LSCircleProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C12C08B20A5233B00650E74 /* LSCircleProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C12C0A320A5234B00650E74 /* LSCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12C0A220A5234A00650E74 /* LSCircleProgressView.swift */; };
+		2C12C0A520A523AF00650E74 /* LSCircleProgressView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2C12C0A420A523AF00650E74 /* LSCircleProgressView.podspec */; };
+		2C12C0A720A5242B00650E74 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2C12C0A620A5242B00650E74 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		2C12C09120A5233B00650E74 /* LSCircleProgressViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSCircleProgressViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C12C09620A5233B00650E74 /* LSCircleProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSCircleProgressViewTests.swift; sourceTree = "<group>"; };
 		2C12C09820A5233B00650E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C12C0A220A5234A00650E74 /* LSCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSCircleProgressView.swift; sourceTree = "<group>"; };
+		2C12C0A420A523AF00650E74 /* LSCircleProgressView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSCircleProgressView.podspec; sourceTree = "<group>"; };
+		2C12C0A620A5242B00650E74 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,8 @@
 		2C12C07E20A5233B00650E74 = {
 			isa = PBXGroup;
 			children = (
+				2C12C0A420A523AF00650E74 /* LSCircleProgressView.podspec */,
+				2C12C0A620A5242B00650E74 /* LICENSE */,
 				2C12C08A20A5233B00650E74 /* LSCircleProgressView */,
 				2C12C09520A5233B00650E74 /* LSCircleProgressViewTests */,
 				2C12C08920A5233B00650E74 /* Products */,
@@ -71,6 +79,7 @@
 		2C12C08A20A5233B00650E74 /* LSCircleProgressView */ = {
 			isa = PBXGroup;
 			children = (
+				2C12C0A220A5234A00650E74 /* LSCircleProgressView.swift */,
 				2C12C08B20A5233B00650E74 /* LSCircleProgressView.h */,
 				2C12C08C20A5233B00650E74 /* Info.plist */,
 			);
@@ -177,6 +186,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C12C0A720A5242B00650E74 /* LICENSE in Resources */,
+				2C12C0A520A523AF00650E74 /* LSCircleProgressView.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C12C0A320A5234B00650E74 /* LSCircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +401,7 @@
 		2C12C0A020A5233B00650E74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = LSCircleProgressViewTests/Info.plist;
@@ -407,6 +420,7 @@
 		2C12C0A120A5233B00650E74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				INFOPLIST_FILE = LSCircleProgressViewTests/Info.plist;
