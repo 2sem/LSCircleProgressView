@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
   #
   s.name         = "LSCircleProgressView"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.swift_version = "4.1"
   s.summary      = "Circled Progress View."
 
@@ -97,7 +97,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "**/*.swift", "**/*.{h,m}"
+  s.source_files  = "*/LSCircleProgressView/*.swift", "**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
