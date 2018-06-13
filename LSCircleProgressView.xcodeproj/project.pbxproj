@@ -33,7 +33,7 @@
 		2C12C09620A5233B00650E74 /* LSCircleProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSCircleProgressViewTests.swift; sourceTree = "<group>"; };
 		2C12C09820A5233B00650E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C12C0A220A5234A00650E74 /* LSCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSCircleProgressView.swift; sourceTree = "<group>"; };
-		2C12C0A420A523AF00650E74 /* LSCircleProgressView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSCircleProgressView.podspec; sourceTree = "<group>"; };
+		2C12C0A420A523AF00650E74 /* LSCircleProgressView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSCircleProgressView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2C12C0A620A5242B00650E74 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

@@ -13,13 +13,13 @@ import CoreGraphics
      The Circled or Arced ProgressView
  */
 @IBDesignable
-class LSCircleProgressView: UIView {
+public class LSCircleProgressView: UIView {
 
     /**
         0.0...1.0, default is 0.0. values outside are pinned.
     */
     @IBInspectable
-    var progress: Float = 0.0{
+    public var progress: Float = 0.0{
         didSet{
             if self.progress < 0{
                 self.progress = 0;
@@ -37,7 +37,7 @@ class LSCircleProgressView: UIView {
         Color for the Progressed Bar
      */
     @IBInspectable
-    var progressTintColor: UIColor! = UIColor.blue{
+    public var progressTintColor: UIColor! = UIColor.blue{
         didSet{
             self.setNeedsDisplay();
         }
@@ -47,7 +47,7 @@ class LSCircleProgressView: UIView {
         Color for the Progress Track
     */
     @IBInspectable
-    var trackTintColor: UIColor! = UIColor.clear{
+    public var trackTintColor: UIColor! = UIColor.clear{
         didSet{
             self.setNeedsDisplay();
         }
@@ -57,7 +57,7 @@ class LSCircleProgressView: UIView {
         Width of Progress Bar
     */
     @IBInspectable
-    var barWidth: CGFloat = 20{
+    public var barWidth: CGFloat = 20{
         didSet{
             self.setNeedsDisplay();
         }
@@ -67,7 +67,7 @@ class LSCircleProgressView: UIView {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
     }
     
@@ -77,7 +77,7 @@ class LSCircleProgressView: UIView {
         Start Angle of Progress Bar
     */
     @IBInspectable
-    var startAngle : Double = -90{
+    public var startAngle : Double = -90{
         didSet{
             switch self.direction{
             case .right:
@@ -100,7 +100,7 @@ class LSCircleProgressView: UIView {
          End Angle of Progress Bar
      */
     @IBInspectable
-    var endAngle : Double = -90 + maxAngle{
+    public var endAngle : Double = -90 + maxAngle{
         didSet{
             switch self.direction{
                 case .right:
@@ -119,7 +119,7 @@ class LSCircleProgressView: UIView {
         }
     }
     
-    enum Direction: Int{
+    public enum Direction: Int{
         case right = 1
         case left = -1
     }
@@ -127,7 +127,7 @@ class LSCircleProgressView: UIView {
     /**
         Direction of Progress Bar
     */
-    var direction : Direction = .right{
+    public var direction : Direction = .right{
         didSet{
             self.setNeedsDisplay();
         }
@@ -135,7 +135,7 @@ class LSCircleProgressView: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         // Drawing code
         guard let ctx = UIGraphicsGetCurrentContext() else{
             return;
