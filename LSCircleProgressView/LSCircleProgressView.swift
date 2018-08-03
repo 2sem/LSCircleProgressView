@@ -14,7 +14,6 @@ import CoreGraphics
  */
 @IBDesignable
 public class LSCircleProgressView: UIView {
-
     /**
         0.0...1.0, default is 0.0. values outside are pinned.
     */
