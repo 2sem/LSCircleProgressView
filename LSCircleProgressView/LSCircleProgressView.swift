@@ -157,6 +157,7 @@ public class LSCircleProgressView: UIView {
         ctx.move(to: CGPoint(x: center.x, y: center.y));
         ctx.addArc(center: center, radius: self.frame.width / 2 - self.barWidth, startAngle: CGFloat(startRadian), endAngle: CGFloat(endRadian), clockwise: false);
         ctx.closePath();
+        ctx.move(to: CGPoint(x: center.x, y: center.y));
         ctx.addArc(center: center, radius: self.frame.width / 2, startAngle: CGFloat(startRadian), endAngle: CGFloat(progRadian), clockwise: false);
         //ctx.addRect(ctx.boundingBoxOfClipPath);
         ctx.clip(using: .evenOdd);
