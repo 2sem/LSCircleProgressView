@@ -140,32 +140,9 @@ public class LSCircleProgressView: UIView {
             return;
         }
         
-        var angle = self.direction == .right ? (self.endAngle - self.startAngle) : (self.startAngle - self.endAngle);
-        angle = Double(self.progress) * angle;
-        //let endAngle = startAngle + Double(self.progress) * 360.0;
-        let startRadian = self.startAngle / 180.0 * Double.pi;
-        let progRadian = (self.startAngle + angle) / 180.0 * Double.pi;
-        let endRadian = self.endAngle / 180.0 * Double.pi;
-        
-        let center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2);
-        
-        // MARK: draw with clipping
-        //draw progress
-        //ctx.beginPath();
-        ctx.saveGState();
-        //substract hole arc
-        ctx.move(to: CGPoint(x: center.x, y: center.y));
-        ctx.addArc(center: center, radius: self.frame.width / 2 - self.barWidth, startAngle: CGFloat(startRadian), endAngle: CGFloat(endRadian), clockwise: false);
-        ctx.closePath();
-        ctx.move(to: CGPoint(x: center.x, y: center.y));
-        ctx.addArc(center: center, radius: self.frame.width / 2, startAngle: CGFloat(startRadian), endAngle: CGFloat(progRadian), clockwise: false);
-        //ctx.addRect(ctx.boundingBoxOfClipPath);
-        ctx.clip(using: .evenOdd);
-        
-        let color = self.progressTintColor == nil ? self.tintColor : self.progressTintColor;
-        color?.setFill();
-        ctx.fill(ctx.boundingBoxOfClipPath);
-        ctx.restoreGState();
+        //self.drawCircle(start: self.startAngle, end: self.endAngle, color: self.trackTintColor, context: ctx);
+        self.drawCircle(color: self.trackTintColor, context: ctx);
+        self.drawCircle(start: self.startAngle, end: self.endAngle, color: self.progressTintColor, context: ctx);
         return;
         
         // MARK: draw with bezier
@@ -182,4 +159,37 @@ public class LSCircleProgressView: UIView {
         //self.clipsToBounds = true;
     }
 
+    internal func drawCircle(start: Double = -90, end: Double = 270, color: UIColor!, context ctx: CGContext){
+        var angle = self.direction == .right ? (end - start) : (start - end);
+        angle = Double(self.progress) * angle;
+        //let endAngle = startAngle + Double(self.progress) * 360.0;
+        let startRadian = start / 180.0 * Double.pi;
+        let progRadian = (start + angle) / 180.0 * Double.pi;
+        let endRadian = end / 180.0 * Double.pi;
+        
+        let center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2);
+        
+        // MARK: draw with clipping
+        //draw progress
+        //ctx.beginPath();
+        ctx.saveGState();
+        //substract hole arc
+        ctx.beginPath();
+        //ctx.beginPath();
+        //ctx.move(to: CGPoint(x: center.x, y: center.y));
+        ctx.addArc(center: center, radius: self.frame.width / 2, startAngle: CGFloat(startRadian), endAngle: CGFloat(progRadian), clockwise: self.direction != .right);
+        //ctx.move(to: CGPoint(x: center.x, y: center.y));
+        ctx.addArc(center: center, radius: self.frame.width / 2 - self.barWidth, startAngle: CGFloat(progRadian), endAngle: CGFloat(startRadian), clockwise: self.direction == .right);
+        //ctx.move(to: CGPoint(x: center.x, y: center.y));
+        //ctx.closePath();
+        
+        //ctx.clip(using: .evenOdd);
+        ctx.closePath();
+        
+        color?.setFill();
+        ctx.fillPath();
+        //ctx.strokePath();
+        //ctx.fill(ctx.boundingBoxOfClipPath);
+        ctx.restoreGState();
+    }
 }
