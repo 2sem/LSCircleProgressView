@@ -142,7 +142,7 @@ public class LSCircleProgressView: UIView {
         
         //self.drawCircle(start: self.startAngle, end: self.endAngle, color: self.trackTintColor, context: ctx);
         self.drawCircle(color: self.trackTintColor, context: ctx);
-        self.drawCircle(start: self.startAngle, end: self.endAngle, color: self.progressTintColor, context: ctx);
+        self.drawCircle(start: self.startAngle, end: self.endAngle, progress: self.progress, color: self.progressTintColor, context: ctx);
         return;
         
         // MARK: draw with bezier
@@ -159,9 +159,9 @@ public class LSCircleProgressView: UIView {
         //self.clipsToBounds = true;
     }
 
-    internal func drawCircle(start: Double = -90, end: Double = 270, color: UIColor!, context ctx: CGContext){
+    internal func drawCircle(start: Double = -90, end: Double = 270, progress: Float = 1.0, color: UIColor!, context ctx: CGContext){
         var angle = self.direction == .right ? (end - start) : (start - end);
-        angle = Double(self.progress) * angle;
+        angle = Double(progress) * angle;
         //let endAngle = startAngle + Double(self.progress) * 360.0;
         let startRadian = start / 180.0 * Double.pi;
         let progRadian = (start + angle) / 180.0 * Double.pi;
